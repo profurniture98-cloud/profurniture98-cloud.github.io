@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Premium IPTV Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #64b5f6;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+        
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-card i {
+            font-size: 4rem;
+            color: #2a5298;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .subscription-plans {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .plan-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .plan-card.featured {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            transform: scale(1.05);
+        }
+        
+        .plan-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .plan-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .plan-card .period {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .plan-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .plan-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Premium IPTV</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reseller.html">Reseller Plans</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Our Premium Services</h1>
+            <p>Comprehensive IPTV solutions tailored for businesses and resellers worldwide.</p>
+            <a href="#services" class="btn">Explore Services</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>IPTV App Development</h3>
+                    <p>Custom IPTV application development for iOS, Android, Smart TVs, and streaming devices. We create user-friendly, feature-rich applications with seamless streaming experience.</p>
+                    <a href="contact.html" class="btn">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tv"></i>
+                    <h3>Smart TV App</h3>
+                    <p>Native Smart TV applications for Samsung, LG, Android TV, Fire TV, and Apple TV. Enjoy high-quality streaming on your big screen with our optimized apps.</p>
+                    <a href="contact.html" class="btn">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>UI Design</h3>
+                    <p>Professional and intuitive user interface design for IPTV applications. We create stunning, user-friendly interfaces that enhance the streaming experience.</p>
+                    <a href="contact.html" class="btn">Design Services</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Subscription Plan Integration</h3>
+                    <p>Complete subscription management system with automated billing, payment processing, and customer management. Streamline your business operations.</p>
+                    <a href="contact.html" class="btn">Integration</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="subscription-plans">
+        <div class="container">
+            <h2 class="section-title">Subscription Plans</h2>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <h4>Starter Plan</h4>
+                    <div class="price">$9.99</div>
+                    <div class="period">per month</div>
+                    <ul>
+                        <li>1000+ Channels</li>
+                        <li>SD & HD Quality</li>
+                        <li>Single Device</li>
+                        <li>Basic Support</li>
+                        <li>7-Day Trial</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Subscribe</a>
+                </div>
+                <div class="plan-card featured">
+                    <h4>Professional Plan</h4>
+                    <div class="price">$19.99</div>
+                    <div class="period">per month</div>
+                    <ul>
+                        <li>3000+ Channels</li>
+                        <li>HD & 4K Quality</li>
+                        <li>3 Devices</li>
+                        <li>Priority Support</li>
+                        <li>VOD & Catch-up</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Subscribe</a>
+                </div>
+                <div class="plan-card">
+                    <h4>Business Plan</h4>
+                    <div class="price">$49.99</div>
+                    <div class="period">per month</div>
+                    <ul>
+                        <li>5000+ Channels</li>
+                        <li>4K Ultra HD</li>
+                        <li>Unlimited Devices</li>
+                        <li>24/7 Support</li>
+                        <li>Custom Features</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Premium IPTV Services. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
